@@ -42,6 +42,10 @@ a {
 /* ==========================
    COLORS & UTILITIES
 ========================== */
+.txt-center {
+  text-align: center;
+}
+
 .txt-black {
   color: #000;
 }
