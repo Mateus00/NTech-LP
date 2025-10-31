@@ -407,7 +407,7 @@ footer {
 }
 
 /* ==========================
-   MOBILE
+   MOBILE - 375px
 ========================== */
 @media (max-width: 375px) {
   * {
@@ -435,6 +435,73 @@ footer {
     gap: 0;
     flex-direction: column-reverse;
     max-width: 360px;
+  }
+
+  .card-content {
+    width: 100%;
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .img-content img {
+    width: 80%;
+    height: auto;
+  }
+
+  .text-container {
+    width: 100%;
+  }
+
+  footer {
+    grid-column: span 12;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+  .logo {
+    font-size: 2.5rem;
+  }
+  .logo span {
+    font-size: 3rem;
+  }
+  .card-title {
+    font-size: 1.4rem;
+  }
+}
+
+/* ==========================
+   MOBILE - 480px
+========================== */
+@media (max-width: 480px) {
+  * {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .wrapper {
+    max-width: 90vw;
+  }
+
+  header {
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+  }
+
+  .hero {
+    grid-column: span 12;
+    gap: 0;
+    flex-direction: column-reverse;
+    max-width: 460px;
   }
 
   .card-content {
