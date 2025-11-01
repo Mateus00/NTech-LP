@@ -41,19 +41,12 @@ O resultado é uma página visualmente impactante, rápida, funcional e compatí
 /
 
 ├── index.html
-
 ├── styles.css
-
 ├── sitemap.xml
-
 ├── robots.txt
-
 ├── assets/
-
 │ ├── images/
-
 │ └── icons/
-
 └── README.md
 
 yaml
