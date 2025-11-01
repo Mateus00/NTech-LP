@@ -39,13 +39,21 @@ O resultado é uma página visualmente impactante, rápida, funcional e compatí
 ## 📁 Estrutura do Projeto
 
 /
+
 ├── index.html
+
 ├── styles.css
+
 ├── sitemap.xml
+
 ├── robots.txt
+
 ├── assets/
+
 │ ├── images/
+
 │ └── icons/
+
 └── README.md
 
 yaml
