@@ -40,13 +40,13 @@ O resultado é uma página visualmente impactante, rápida, funcional e compatí
 
 /
 
-├── index.html
-├── styles.css
-├── sitemap.xml
-├── robots.txt
-├── assets/
-│ ├── images/
-│ └── icons/
+├── index.html<br>
+├── styles.css<br>
+├── sitemap.xml<br>
+├── robots.txt<br>
+├── assets/<br>
+│ ├── images/<br>
+│ └── icons/<br>
 └── README.md
 
 yaml
