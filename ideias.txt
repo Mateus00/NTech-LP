@@ -1,0 +1,165 @@
+Seleção de ideias organizadas em ordem cronológica de implementação,
+priorizando da mais essencial à menos relevante.
+
+🧩 1. Seção “Pacotes e Planos”
+
+Objetico: Mostrar opções de planos (básico, intermediário e premium) com destaque para o mais vendido.
+
+
+🟩 Plano Básico
+
+Objetivo: Entregar uma landing page simples, funcional e com foco direto em conversão.
+
+Inclui:
+
+1 página principal com até 3 seções
+
+Design responsivo (funciona bem no celular e computador)
+
+Botão de ação principal (WhatsApp, orçamento, etc.)
+
+Texto e imagens enviados pelo cliente
+
+Integração básica com formulário ou link de contato
+
+Como explicar ao cliente: (copy)
+
+“É o plano ideal para quem quer ter uma presença digital rápida e funcional. Uma página leve, direta e com o essencial para apresentar seu serviço e receber contatos.”
+
+Layout em 3 cards lado a lado.
+
+Botões “Quero este pacote” com animação suave.
+
+Inclua diferenciais como “Entrega em até 3 dias”, “1 revisão gratuita”, etc.
+
+
+🟨 Plano Intermediário (sugestões de nome):
+
+Plano Profissional
+
+Plano Essencial Plus
+
+Plano Completo
+
+Plano Performance
+
+Inclui:
+
+Tudo do plano básico
+
+Até 5 seções (ex: sobre, vantagens, depoimentos, contato)
+
+Ajuste de textos e imagens feitos pela NTech
+
+Pequenas animações e efeitos visuais
+
+SEO básico (otimização para aparecer no Google)
+
+Integração com redes sociais
+
+Como explicar:
+
+“Perfeito para quem quer um visual mais completo e moderno, com mais seções, efeitos e estrutura para destacar o negócio de forma profissional.”
+
+
+🟦 Plano Avançado (sugestões de nome):
+
+Plano Premium
+
+Plano Alta Conversão
+
+Plano Impacto Digital
+
+Plano NTech PRO
+
+Inclui:
+
+Tudo do plano intermediário
+
+Design exclusivo (personalizado do zero)
+
+Protótipo visual (prévia antes do desenvolvimento)
+
+Animações profissionais e transições suaves
+
+Formulários avançados ou integrações com automação (e-mail, CRM etc.)
+
+Ajustes pós-entrega e suporte estendido
+
+Como explicar:
+
+“É o plano ideal para quem busca destaque e performance. Design exclusivo, transições modernas e tudo otimizado para gerar o máximo de resultado e conversões.”
+
+
+💡 Dica de apresentação (em texto simples para clientes)
+
+“Temos três opções de pacotes, para atender desde quem quer apenas começar até quem quer uma página completa e personalizada.
+O Plano Básico é direto e funcional.
+O Plano Profissional traz mais recursos visuais e conteúdo.
+E o Plano Premium é feito sob medida, com design exclusivo e foco total em conversão.”
+
+
+
+
+
+
+
+
+
+
+
+
+⚙️ 2. Etapas do Processo
+
+Mostre como o cliente vai do contato à entrega da página.
+Exemplo de etapas:
+
+Briefing rápido
+
+Protótipo visual
+
+Desenvolvimento e testes
+
+Publicação e entrega
+
+Use ícones minimalistas e animação “fade-up”.
+
+💡 3. FAQ (Perguntas Frequentes)
+
+Ajudam a quebrar objeções antes do contato.
+Perguntas comuns:
+
+“Quanto tempo leva para entregar?”
+
+“Posso pedir alterações depois?”
+
+“Vocês hospedam o site?”
+
+✨ 4. Portfólio / Trabalhos Recentes
+
+Mostre prints de landing pages reais ou modelos que vocês criaram.
+
+Use hover animado mostrando o nome do cliente e o resultado alcançado.
+
+Adicione botão “Ver mais projetos”.
+
+💬 5. Depoimentos de Clientes
+
+Depoimentos com foto (ou avatar genérico) e o nome da empresa.
+
+Frase curta e realista como:
+
+“A NTech entregou nossa landing page em 2 dias e aumentamos os cadastros em 40%.”
+
+Pode usar um carrossel horizontal para dinamismo.
+
+🚀 6. Resultados / Números
+
+Seção com métricas reais ou simuladas:
+
+“+120 landing pages entregues”
+
+“+80 clientes atendidos”
+
+“Taxa média de conversão: 18%”
+Esses números geram credibilidade imediata.

@@ -13,7 +13,7 @@ html {
   box-sizing: border-box;
   font-family: "Instrument Sans", sans-serif;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.5;
 }
 
@@ -27,10 +27,6 @@ body {
   justify-content: center;
 }
 
-.text-center {
-  text-align: center;
-}
-
 /* ==========================
    GLOBAL SETTINGS
 ========================== */
@@ -42,6 +38,50 @@ a {
 /* ==========================
    COLORS & UTILITIES
 ========================== */
+.items-center {
+  display: grid;
+  place-items: center;
+}
+
+.box-shadow-green {
+  border: 2px solid #18eb3599;
+  border-radius: 16px;
+  box-shadow: inset 0 0 3px #18eb35, 0 0 30px #18eb3599;
+}
+
+.box-shadow-blue {
+  border: 2px solid #185beb99;
+  border-radius: 16px;
+  box-shadow: inset 0 0 3px #185beb, 0 0 30px #185beb99;
+}
+
+.box-shadow-yellow {
+  border: 2px solid #ebe81899;
+  border-radius: 16px;
+  box-shadow: inset 0 0 3px #ebe818, 0 0 30px #ebe81899;
+}
+
+.selected {
+  border-color: #fff8;
+  box-shadow: inset 0 0 3px #fff7, 0 0 30px #fff3;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in:nth-child(2) { transition-delay: 0.2s; }
+.fade-in:nth-child(3) { transition-delay: 0.4s; }
+.fade-in:nth-child(4) { transition-delay: 0.6s; }
+.fade-in:nth-child(5) { transition-delay: 0.8s; }
+
 .txt-center {
   text-align: center;
 }
@@ -49,8 +89,17 @@ a {
 .txt-black {
   color: #000;
 }
+
 .txt-green {
   color: #18eb35;
+}
+
+.txt-blue {
+  color: #185beb;
+}
+
+.txt-yellow {
+  color: #ebe818;
 }
 
 .bg-green {
@@ -58,6 +107,20 @@ a {
 }
 .bg-green:hover {
   background: #067415;
+}
+
+.bg-blue {
+  background: #185beb;
+}
+.bg-blue:hover {
+  background: #0a3185;
+}
+
+.bg-yellow {
+  background: #ebe818;
+}
+.bg-yellow:hover {
+  background: #9b980b;
 }
 
 .bg-white {
@@ -95,6 +158,11 @@ p {
   overflow-wrap: break-word; /* compatibilidade com navegadores modernos */
   white-space: normal; /* garante que quebras de linha automáticas aconteçam */
 }
+
+h2 { font-size: 2.2rem;}
+h3 { font-size: 1.8rem;}
+
+li {font-size: 1.2rem;}
 
 /* ==========================
    STRUCTURE
@@ -176,29 +244,26 @@ header {
   z-index: -1;
   inset: 0;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: 32px;
-  opacity: 0.2;
+  opacity: 0.15;
+  left: 0;
 }
 
-/* Primeira linha (3 círculos à direita) */
-.background .circle:nth-child(-n + 5) {
+.background .circle:nth-child(-n + 4) {
   grid-row: 1;
-  justify-self: end;
+  justify-self: center;
 }
 
-/* Segunda linha (2 círculos à direita) */
-.background .circle:nth-child(n + 6):nth-child(-n + 10) {
+.background .circle:nth-child(n + 5):nth-child(-n + 8) {
   grid-row: 2;
-  justify-self: end;
+  justify-self: center;
 }
 
-/* Terceira linha (1 círculo à direita) */
-.background .circle:nth-child(11),
-.background .circle:nth-child(12) {
+.background .circle:nth-child(n + 9):nth-child(-n + 12) {
   grid-row: 3;
-  justify-self: end;
+  justify-self: center;
 }
 
 .background .circle:nth-child(1) {
@@ -208,34 +273,34 @@ header {
   animation-delay: 0.2s;
 }
 .background .circle:nth-child(3) {
-  animation-delay: 0.3s;
+  animation-delay: 0.4s;
 }
 .background .circle:nth-child(4) {
-  animation-delay: 0.8s;
+  animation-delay: 0.6s;
 }
 .background .circle:nth-child(5) {
-  animation-delay: 1s;
+  animation-delay: .8s;
 }
 .background .circle:nth-child(6) {
-  animation-delay: 1.2s;
+  animation-delay: 1s;
 }
 .background .circle:nth-child(7) {
-  animation-delay: 1.4s;
+  animation-delay: 1.2s;
 }
 .background .circle:nth-child(8) {
-  animation-delay: 1.6s;
+  animation-delay: 1.4s;
 }
 .background .circle:nth-child(9) {
-  animation-delay: 1.8s;
+  animation-delay: 1.6s;
 }
 .background .circle:nth-child(10) {
-  animation-delay: 2s;
+  animation-delay: 1.8s;
 }
 .background .circle:nth-child(11) {
-  animation-delay: 2.2s;
+  animation-delay: 2s;
 }
 .background .circle:nth-child(12) {
-  animation-delay: 2.4s;
+  animation-delay: 2.2s;
 }
 
 .circle {
@@ -310,10 +375,21 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.4rem;
+  gap: 3.2rem;
   padding: 1.6rem 0;
   position: relative;
   overflow: hidden;
+}
+
+.vantangens {
+  width: 100%;
+  height: auto;
+}
+
+.pacotes {
+  width: 100%;
+  height: auto;
+  margin: 3.2rem 0;
 }
 
 /* ==========================
@@ -367,6 +443,53 @@ main {
   width: 200px;
   height: auto;
 }
+
+/* ==========================
+   PACOTES
+========================== */
+.planos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  gap: 24px;
+  padding: 24px;
+  margin: 3.2rem 0;
+}
+
+.container-item-plano {
+  width: 100%;
+  height: 100%;
+}
+
+.container-item-plano p {
+  padding: 24px;
+  font-size: 1.4rem;
+}
+
+.item-plano {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
+  min-width: 350px;
+  min-height: 500px;
+  padding: 24px;
+  background-color: #0008;
+  transition: .2s;
+}
+
+.item-plano:hover {
+  transform: translateY(-6px);
+}
+
+.item-plano li {
+  margin: 0 24px;
+  font-size: 1.5rem;
+}
+
+
+
 
 /* ==========================
    FOOTER
@@ -457,6 +580,11 @@ footer {
   .card-title {
     font-size: 1.4rem;
   }
+
+  .item-plano {
+    min-width: 300px;
+    max-width: 450px;
+  }
 }
 
 /* ==========================
@@ -504,6 +632,15 @@ footer {
 
   .text-container {
     width: 100%;
+  }
+
+  .planos-grid {
+    grid-template-columns: none;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  .item-plano {
+    max-width: 350px;
   }
 
   footer {
