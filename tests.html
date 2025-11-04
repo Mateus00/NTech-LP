@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- ==========================
+        CSS SUGERIDO (Tailwind + Custom)
+    ========================== -->
+    <style>
+      /* ======= BASE ======= */
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background-color: #000;
+        color: #fff;
+      }
+
+      /* ======= SEÇÃO ======= */
+      #processo {
+        background-color: #000;
+        padding: 80px 20px;
+        text-align: center;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .titulo {
+        color: #00ff88;
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 60px;
+      }
+
+      /* ======= ETAPAS ======= */
+      .etapas {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 30px;
+      }
+
+      .etapa {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(0, 255, 136, 0.2);
+        border-radius: 16px;
+        padding: 30px 20px;
+        transition: all 0.3s ease;
+        opacity: 0;
+        transform: translateY(40px);
+        animation: fadeUp 0.8s forwards;
+        animation-delay: var(--delay);
+      }
+
+      .etapa:hover {
+        transform: translateY(-6px);
+        border-color: #00ff88;
+        box-shadow: 0 0 20px rgba(0, 255, 136, 0.15);
+      }
+
+      .icone {
+        font-size: 2rem;
+        color: #00ff88;
+        margin-bottom: 15px;
+      }
+
+      .etapa h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: #fff;
+      }
+
+      .etapa p {
+        color: #cccccc;
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      /* ======= ANIMAÇÃO FADE-UP ======= */
+      @keyframes fadeUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ======= RESPONSIVIDADE ======= */
+      @media (max-width: 600px) {
+        .titulo {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+
+    <!-- Font Awesome (ícones minimalistas) -->
+    <script
+      src="https://kit.fontawesome.com/a2e0e6e6b4.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- ==========================
+        SEÇÃO: ETAPAS DO PROCESSO
+    ========================== -->
+    <section id="processo">
+      <div class="container">
+        <h2 class="titulo">⚙️ Etapas do Processo</h2>
+
+        <div class="etapas">
+          <div class="etapa" style="--delay: 0s">
+            <div class="icone">
+              <i class="fa-regular fa-comments"></i>
+            </div>
+            <h3>Briefing Rápido</h3>
+            <p>Entendemos seu negócio e seus objetivos em poucos minutos.</p>
+          </div>
+
+          <div class="etapa" style="--delay: 0.2s">
+            <div class="icone">
+              <i class="fa-solid fa-diagram-project"></i>
+            </div>
+            <h3>Protótipo Visual</h3>
+            <p>Criamos um layout visual para validar antes da produção.</p>
+          </div>
+
+          <div class="etapa" style="--delay: 0.4s">
+            <div class="icone">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <h3>Desenvolvimento e Testes</h3>
+            <p>
+              Codificamos sua página com foco em performance e responsividade.
+            </p>
+          </div>
+
+          <div class="etapa" style="--delay: 0.6s">
+            <div class="icone">
+              <i class="fa-solid fa-rocket"></i>
+            </div>
+            <h3>Publicação e Entrega</h3>
+            <p>Publicamos e garantimos que tudo esteja perfeito no ar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

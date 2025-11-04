@@ -393,14 +393,16 @@ main {
   overflow: hidden;
 }
 
-.vantangens {
-  width: 100%;
-  height: auto;
+.vantagens {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
 }
 
 .pacotes {
-  width: 100%;
-  height: auto;
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr);
+  gap: 24px;
   margin: 3.2rem 0;
 }
 
@@ -461,9 +463,10 @@ main {
 ========================== */
 .planos-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  place-items: center;
-  gap: 24px;
+  grid-template-columns: auto-fit, minmax(350px, 1fr);
+  gap: 32px;
+  justify-items: center;
+  align-items: start;
   padding: 32px 24px;
   margin: 3.2rem 0;
 }
@@ -476,6 +479,8 @@ main {
 .container-item-plano p {
   padding: 24px;
   font-size: 1.4rem;
+  min-width: 300px;
+  max-width: 400px;
 }
 
 .item-plano {
@@ -483,12 +488,14 @@ main {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: auto;
-  min-width: 350px;
+  min-width: 300px;
+  max-width: 400px;
   min-height: 500px;
   padding: 24px;
   background-color: rgba(0, 0, 0, 0.5);
-  transition: 0.2s;
+  border-radius: 16px;
+  transition: 0.3s ease;
+  margin: 0 auto;
 }
 
 .item-plano:hover {
@@ -540,59 +547,13 @@ footer {
 }
 
 /* ==========================
-   MOBILE - 375px
+   DESKTOP - 1024px
 ========================== */
-@media (max-width: 375px) {
-  * {
-    font-size: 0.8rem;
-  }
-  h1 {
-    font-size: 1.8rem;
-  }
-  p {
-    font-size: 1rem;
-  }
-  .logo {
-    font-size: 2rem;
-  }
-  .logo span {
-    font-size: 2.5rem;
-  }
-  .card-title {
-    font-size: 1.2rem;
-  }
-}
-
-/* ==========================
-   MOBILE - 480px
-========================== */
-@media (max-width: 480px) {
-  .img-content img {
-    width: 60%;
-  }
-  * {
-    font-size: 1rem;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-  p {
-    font-size: 1.2rem;
-  }
-  .logo {
-    font-size: 2.5rem;
-  }
-  .logo span {
-    font-size: 3rem;
-  }
-  .card-title {
-    font-size: 1.4rem;
-  }
-
-  .item-plano {
-    min-width: 300px;
-    max-width: 450px;
+@media (min-width: 1024px) {
+  .planos-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1100px;
+    margin: 0 auto;
   }
 }
 
@@ -600,43 +561,34 @@ footer {
    MOBILE - 720px
 ========================== */
 @media (max-width: 720px) {
-  * {
-    font-size: 1rem;
-    text-align: center;
+  html {
+    font-size: 55%;
   }
 
   body {
-    margin: 0;
+    text-align: center;
     padding: 0;
+    margin: 0;
   }
 
   .wrapper {
     max-width: 90vw;
   }
 
-  header {
-    align-items: center;
-    justify-content: center;
-    padding: 3rem;
-  }
-
   .hero {
-    grid-column: span 12;
-    gap: 0;
     flex-direction: column-reverse;
+    gap: 2rem;
     max-width: 460px;
     margin: 0 auto;
   }
 
-  .card-content {
-    width: 100%;
-    flex-direction: column;
-    padding: 1.5rem;
+  .hero-img img {
+    width: 80%;
   }
 
-  .img-content img {
-    width: 40%;
-    height: auto;
+  .card-content {
+    flex-direction: column;
+    padding: 1.6rem;
   }
 
   .text-container {
@@ -644,40 +596,64 @@ footer {
   }
 
   footer {
-    grid-column: span 12;
+    text-align: center;
   }
 
   h1 {
     font-size: 2.6rem;
   }
+
   p {
     font-size: 1.4rem;
   }
+
   .logo {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
+
   .logo span {
-    font-size: 3rem;
+    font-size: 3.4rem;
   }
+
   .card-title {
     font-size: 1.8rem;
   }
 }
 
 /* ==========================
-   DESKTOP - 1140px
+   MOBILE - 480px
 ========================== */
-@media (max-width: 1140px) {
+@media (max-width: 480px) {
+  html {
+    font-size: 50%;
+  }
+
+  .hero {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .logo {
+    font-size: 2.2rem;
+  }
+
+  .logo span {
+    font-size: 2.8rem;
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+  }
+
   .planos-grid {
-    grid-template-columns: none;
-    grid-template-rows: 1fr 1fr 1fr;
+    padding: 0;
   }
 
-  .item-plano {
-    max-width: 350px;
+  p {
+    font-size: 1.2rem;
   }
 
-  .container-item-plano p {
-    max-width: 350px;
+  .img-content img {
+    width: 70%;
   }
 }
