@@ -395,6 +395,7 @@ main {
 .etapas {
   width: 100%;
   padding: 3.2rem 2.4rem;
+  background: rgba(255, 255, 255, 0.02); /* opcional */
 }
 
 .vantagens {
@@ -500,7 +501,7 @@ main {
 ========================== */
 .planos-grid {
   display: grid;
-  grid-template-columns: auto-fit, minmax(350px, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 32px;
   justify-items: center;
   align-items: start;
