@@ -1,0 +1,700 @@
+/* ==========================
+   RESET & BASE
+========================== */
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Instrument Sans", sans-serif;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+body {
+  max-width: 100vw;
+  background: #000;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========================
+   GLOBAL SETTINGS
+========================== */
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* ==========================
+   COLORS & UTILITIES
+========================== */
+.items-center {
+  display: grid;
+  place-items: center;
+}
+
+.box-shadow-green {
+  border: 2px solid rgba(24, 235, 53, 0.6);
+  border-radius: 16px;
+  box-shadow: inset 0 0 3px #18eb35, 0 0 20px rgba(24, 235, 53, 0.6);
+}
+
+.box-shadow-blue {
+  border: 2px solid rgba(24, 91, 235, 0.6);
+  border-radius: 16px;
+  box-shadow: inset 0 0 3px #185beb, 0 0 20px rgba(24, 91, 235, 0.6);
+}
+
+.box-shadow-yellow {
+  border: 2px solid rgba(235, 232, 24, 0.6);
+  border-radius: 16px;
+  box-shadow: inset 0 0 3px #ebe818, 0 0 20px rgba(235, 232, 24, 0.6);
+}
+
+.selected {
+  border-color: #fff8;
+  box-shadow: inset 0 0 3px #fff7, 0 0 30px #fff3;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.fade-in:nth-child(3) {
+  transition-delay: 0.4s;
+}
+.fade-in:nth-child(4) {
+  transition-delay: 0.6s;
+}
+.fade-in:nth-child(5) {
+  transition-delay: 0.8s;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.txt-black {
+  color: #000;
+}
+
+.txt-green {
+  color: #18eb35;
+}
+
+.txt-blue {
+  color: #185beb;
+}
+
+.txt-yellow {
+  color: #ebe818;
+}
+
+.bg-green {
+  background: #18eb35;
+}
+.bg-green:hover {
+  background: #067415;
+}
+
+.bg-blue {
+  background: #185beb;
+}
+.bg-blue:hover {
+  background: #0a3185;
+}
+
+.bg-yellow {
+  background: #ebe818;
+}
+.bg-yellow:hover {
+  background: #9b980b;
+}
+
+.bg-white {
+  background: #fff;
+}
+.bg-white:hover {
+  background: gray;
+}
+
+/* ==========================
+   TYPOGRAPHY
+========================== */
+.logo {
+  font-family: "Instrument Sans", sans-serif;
+}
+
+.card-title {
+  font-size: 2.2rem;
+}
+
+h1,
+.logo span,
+.card-title {
+  font-family: "Days One", sans-serif;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  width: 100%;
+}
+p {
+  font-size: 2rem;
+  word-wrap: break-word; /* força quebra de palavra se for muito longa */
+  overflow-wrap: break-word; /* compatibilidade com navegadores modernos */
+  white-space: normal; /* garante que quebras de linha automáticas aconteçam */
+}
+
+h2 {
+  font-size: 2.2rem;
+}
+h3 {
+  font-size: 1.8rem;
+}
+
+li {
+  font-size: 1.2rem;
+}
+
+/* ==========================
+   STRUCTURE
+========================== */
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(64px, auto);
+  gap: 10px;
+  max-width: 1140px;
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+}
+
+/* 🔹 Círculos de fundo */
+.background {
+  min-height: 100vh;
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 32px;
+  opacity: 0.15;
+  left: 0;
+}
+
+.background .circle:nth-child(-n + 4) {
+  grid-row: 1;
+  justify-self: center;
+}
+
+.background .circle:nth-child(n + 5):nth-child(-n + 8) {
+  grid-row: 2;
+  justify-self: center;
+}
+
+.background .circle:nth-child(n + 9):nth-child(-n + 12) {
+  grid-row: 3;
+  justify-self: center;
+}
+
+.background .circle:nth-child(1) {
+  animation-delay: 0s;
+}
+.background .circle:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.background .circle:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.background .circle:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.background .circle:nth-child(5) {
+  animation-delay: 0.8s;
+}
+.background .circle:nth-child(6) {
+  animation-delay: 1s;
+}
+.background .circle:nth-child(7) {
+  animation-delay: 1.2s;
+}
+.background .circle:nth-child(8) {
+  animation-delay: 1.4s;
+}
+.background .circle:nth-child(9) {
+  animation-delay: 1.6s;
+}
+.background .circle:nth-child(10) {
+  animation-delay: 1.8s;
+}
+.background .circle:nth-child(11) {
+  animation-delay: 2s;
+}
+.background .circle:nth-child(12) {
+  animation-delay: 2.2s;
+}
+
+.circle {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  border-radius: 50%;
+  animation: fall 3s ease-in-out infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  40% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.circle-bg-green {
+  background: radial-gradient(circle at 30% 30%, #18eb35, #067415);
+}
+/*------------------------*/
+
+/* ==========================
+   GRID VIEW
+========================== */
+input:checked + .wrapper .grid {
+  display: grid;
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  display: none;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(100%, auto);
+  z-index: 3;
+}
+
+.grid p {
+  border: 1px solid;
+  background: #000;
+  opacity: 0.2;
+}
+
+/* ==========================
+   HEADER
+========================== */
+header {
+  grid-column: span 12;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.logo span {
+  font-size: 4.8rem;
+  color: #18eb35;
+}
+
+/* ==========================
+   HERO SECTION
+========================== */
+.hero {
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Divide o hero em duas colunas iguais */
+  align-items: center;
+  gap: 2.4rem;
+  padding: 2.4rem;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Alinha o conteúdo à esquerda */
+  padding-left: 64px;
+  gap: 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.hero-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.hero-img:hover {
+  transform: scale(1.05);
+}
+
+.hero-img img {
+  width: 100%;
+  max-width: 500px;
+  object-fit: contain;
+}
+
+/* ==========================
+   MAIN SECTION
+========================== */
+main {
+  grid-column: span 12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.2rem;
+  padding: 1.6rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.etapas {
+  width: 100%;
+  padding: 3.2rem 2.4rem;
+  background: rgba(255, 255, 255, 0.02); /* opcional */
+}
+
+.vantagens {
+  width: 100%;
+  padding: 3.2rem 2.4rem;
+  margin: 3.2rem 0;
+}
+
+.pacotes {
+  width: 100%;
+  padding: 3.2rem 2.4rem;
+  margin: 3.2rem 0;
+}
+
+/* ==========================
+   ETAPAS
+========================== */
+.etapas-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  padding: 3.2rem 0;
+  gap: 30px;
+}
+
+.etapa {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(68, 218, 10, 0.555);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  gap: 2.8rem;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.etapa:hover {
+  transform: translateY(-6px);
+  border-color: #18eb35;
+  box-shadow: inset 0 0 3px #18eb35, 0 0 20px #18eb35;
+}
+
+.etapa .icone i {
+  font-size: 3.2rem;
+  color: #18eb35;
+}
+
+/* ==========================
+   CAROUSEL
+========================== */
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 3rem 0;
+  gap: 2rem;
+}
+
+.carousel-track {
+  display: flex;
+  align-items: center;
+  transition: transform 0.8s ease;
+}
+
+.carousel .card {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.6rem;
+}
+
+.card-content {
+  width: 100%;
+  max-width: 550px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 2rem;
+  box-shadow: inset 0 0 15px #18eb35, 0 0 5px #18eb35;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  position: relative;
+  z-index: 2;
+}
+
+.text-container {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.img-content img {
+  width: 200px;
+  height: auto;
+}
+
+/* ==========================
+   PACOTES
+========================== */
+.planos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));
+  gap: 32px;
+  justify-items: center;
+  align-items: center;
+  padding: 32px 24px;
+  margin: 3.2rem 0;
+}
+
+.container-item-plano p {
+  padding: 24px;
+  font-size: 1.4rem;
+  max-width: 375px;
+}
+
+.item-plano {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 350px;
+  min-height: 500px;
+  padding: 24px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 16px;
+  transition: 0.3s ease;
+  margin: 0 auto;
+}
+
+.item-plano:hover {
+  transform: translateY(-6px);
+}
+
+.item-plano li {
+  margin: 0 24px;
+  font-size: 1.5rem;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+footer {
+  grid-column: span 12;
+  display: grid;
+  place-items: center;
+  gap: 12px;
+}
+
+.social-media {
+  display: flex;
+  gap: 24px;
+}
+
+.social-media i {
+  font-size: 2.2rem;
+  cursor: pointer;
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+.btn-orcamento {
+  min-width: 180px;
+  border: none;
+  border-radius: 12px;
+  padding: 1.6rem 2.4rem;
+  font-family: "Days One", sans-serif;
+  font-size: 1.6rem;
+  color: #000;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-orcamento:hover {
+  transform: translateY(2px);
+}
+
+/* ==========================
+   DESKTOP - 1024px
+========================== */
+@media (min-width: 1024px) {
+  .planos-grid {
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+  }
+}
+
+/* ==========================
+   MOBILE - 720px
+========================== */
+@media (max-width: 720px) {
+  html {
+    font-size: 55%;
+  }
+
+  body {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .wrapper {
+    max-width: 90vw;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-content {
+    grid-row: 2 / span 1;
+    align-items: center;
+    padding-left: 0;
+  }
+
+  .hero-img {
+    grid-row: 1 / span 1;
+  }
+
+  .hero-img img {
+    max-width: 100%;
+  }
+
+  .card-content {
+    flex-direction: column;
+    padding: 1.6rem;
+  }
+
+  .text-container {
+    width: 100%;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2.6rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+  }
+
+  .logo {
+    font-size: 2.8rem;
+  }
+
+  .logo span {
+    font-size: 3.4rem;
+  }
+
+  .card-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* ==========================
+   MOBILE - 480px
+========================== */
+@media (max-width: 480px) {
+  html {
+    font-size: 50%;
+  }
+
+  .hero {
+    padding: 0 1rem;
+  }
+
+  .logo {
+    font-size: 2.2rem;
+  }
+
+  .logo span {
+    font-size: 2.8rem;
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+  }
+
+  .planos-grid {
+    padding: 0;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  .img-content img {
+    width: 70%;
+  }
+}

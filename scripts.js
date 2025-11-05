@@ -1,33 +1,36 @@
-const track = document.querySelector(".carousel-track");
-const cards = document.querySelectorAll(".carousel .card");
+const carousel = document.querySelector(".carousel");
+const track = carousel.querySelector(".carousel-track");
+const items = carousel.querySelectorAll(".carousel-item");
+const nav = carousel.querySelector(".carousel-nav");
+
 let currentIndex = 0;
 
-function moveCarousel() {
-  currentIndex = (currentIndex + 1) % cards.length;
-  track.style.transform = `translateX(-${currentIndex * 100}%)`;
+// Cria botões de navegação automaticamente
+items.forEach((_, index) => {
+  const btn = document.createElement("button");
+  btn.addEventListener("click", () => moveCarousel(index));
+  nav.appendChild(btn);
+});
+
+const navButtons = nav.querySelectorAll("button");
+
+// Move o carrossel
+function moveCarousel(index) {
+  currentIndex = index;
+  track.style.transform = `translateX(-${index * 100}%)`;
+  updateNav();
 }
 
-setInterval(moveCarousel, 5000); // muda a cada 4 segundos
+function updateNav() {
+  navButtons.forEach((btn, i) => btn.classList.toggle("active", i === currentIndex));
+}
 
-document.addEventListener("DOMContentLoaded", () => {
-    const faders = document.querySelectorAll(".fade-in");
+// Autoplay
+function autoPlay() {
+  currentIndex = (currentIndex + 1) % items.length;
+  moveCarousel(currentIndex);
+}
+setInterval(autoPlay, 5000);
 
-    const appearOptions = {
-      threshold: 0.1, // 20% do elemento visível ativa o efeito
-      rootMargin: "0px 0px -50px 0px"
-    };
-
-    const appearOnScroll = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("show");
-        observer.unobserve(entry.target);
-      });
-    }, appearOptions);
-
-    faders.forEach(fader => {
-      appearOnScroll.observe(fader);
-    });
-  });
-
-
+// Inicializa
+moveCarousel(0);
