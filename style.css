@@ -509,13 +509,18 @@ header h1 {
   color: #18eb35;
 }
 
+.pacotes {
+  gap: 5rem;
+}
+
 .item-plano {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   max-width: 350px;
-  height: 600px;
+  min-height: 550px;
   padding: 2.4rem;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 16px;
@@ -536,6 +541,10 @@ header h1 {
   padding: 1rem 0;
 }
 
+.plano-desc {
+  max-width: 350px;
+}
+
 .social-media i {
   font-size: 3rem;
 }
@@ -554,8 +563,8 @@ header h1 {
   }
 
   .item-plano {
-    height: auto;
-    min-height: 650px;
+    max-width: 350px;
+    min-height: auto;
   }
 }
 
@@ -566,10 +575,6 @@ header h1 {
 
   .card-img img {
     max-width: 160px;
-  }
-
-  .item-plano {
-    min-height: 600px;
   }
 }
 
@@ -593,10 +598,6 @@ header h1 {
 
   .card-img img {
     max-width: 140px;
-  }
-
-  .item-plano {
-    min-height: 450px;
   }
 }
 
